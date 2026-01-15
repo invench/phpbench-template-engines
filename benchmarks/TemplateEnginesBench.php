@@ -2,8 +2,6 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Smarty\Smarty;
-use Smarty\Template;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TemplateWrapper;
@@ -22,12 +20,10 @@ class TemplateEnginesBench
     private const TEMPLATES_DIR = __DIR__ . '/../templates';
 
     private Smarty $smarty;
-    private Template $smartyTemplate;
+    private $smartyTemplate;
     private LatteEngine $latte;
     private Environment $twig;
-    private Environment $twigYield;
     private TemplateWrapper $twigTemplate;
-    private TemplateWrapper $twigYieldTemplate;
     private string $latteTemplate;
     private array $data;
 
@@ -72,20 +68,14 @@ class TemplateEnginesBench
         $this->smarty->setCacheDir(self::CACHE_DIR . '/smarty');
         $this->smarty->setCompileDir(self::CACHE_DIR . '/smarty');
         $this->smarty->setTemplateDir(self::TEMPLATES_DIR);
-        $this->smartyTemplate = $this->smarty->doCreateTemplate('index.html.smarty');
+        $this->smartyTemplate = $this->smarty->createTemplate('index.html.smarty');
 
-        $twig_loader = new FilesystemLoader(self::TEMPLATES_DIR);
-        $this->twig = new Environment($twig_loader, [
+        $loader = new FilesystemLoader(self::TEMPLATES_DIR);
+        $this->twig = new Environment($loader, [
             'cache' => self::CACHE_DIR . '/twig',
             'auto_reload' => false,
         ]);
         $this->twigTemplate = $this->twig->load('index.html.twig');
-        $this->twigYield = new Environment($twig_loader, [
-            'cache' => self::CACHE_DIR . '/twig-yield',
-            'auto_reload' => false,
-            'use_yield' => true,
-        ]);
-        $this->twigYieldTemplate = $this->twigYield->load('index.html.twig');
 
         $latte_cache_dir = self::CACHE_DIR . '/latte';
         if ( !is_dir($latte_cache_dir) )
@@ -102,8 +92,6 @@ class TemplateEnginesBench
         $this->smartyTemplate->fetch();
         $this->twig->load('index.html.twig')->render($this->data);
         $this->twigTemplate->render($this->data);
-        $this->twigYield->load('index.html.twig')->render($this->data);
-        $this->twigYieldTemplate->render($this->data);
         $this->latte->renderToString($this->latteTemplate, $this->data);
     }
 
@@ -127,16 +115,6 @@ class TemplateEnginesBench
     public function benchTwigReuse(): void
     {
         $this->twigTemplate->render($this->data);
-    }
-
-    public function benchTwigYield(): void
-    {
-        $this->twigYield->load('index.html.twig')->render($this->data);
-    }
-
-    public function benchTwigYieldReuse(): void
-    {
-        $this->twigYieldTemplate->render($this->data);
     }
 
     public function benchLatte(): void

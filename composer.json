@@ -3,8 +3,8 @@
     "description": "Benchmark of Smarty, Twig and Latte",
     "type": "project",
     "require": {
-        "smarty/smarty": "5.x",
-        "twig/twig": "3.x",
+        "smarty/smarty": "4.x",
+        "twig/twig": "3.8.x",
         "latte/latte": "3.1.x",
         "phpbench/phpbench": "^1.4"
     },
