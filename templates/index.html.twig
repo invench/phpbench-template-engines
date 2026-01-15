@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    This block contains the main content.
+
+    {% for row in data %}
+        {{ row }}
+    {% endfor %}
+
+    {{ data|json_encode }}
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="{% block html_class "some-class-name" %}">
+<head>
+    <title>Page title</title>
+
+    <style>
+        a {
+            background-color: black;
+        }
+
+        table {
+            color: yellow;
+        }
+    </style>
+
+    <script>
+      const foo = function () {
+        global = 'foo';
+      };
+    </script>
+
+    {% block custom_head_content %}
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+    <h1>Page Header</h1>
+{% endblock %}
+</body>
+</html>

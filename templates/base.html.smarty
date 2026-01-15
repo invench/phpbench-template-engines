@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="{block name=html_class}some-class-name{/block}">
+<head>
+    <title>Page title</title>
+
+    <style>
+        a {
+            background-color: black;
+        }
+
+        table {
+            color: yellow;
+        }
+    </style>
+
+    <script>
+      const foo = function () {
+        global = 'foo';
+      };
+    </script>
+
+    {block name="custom_head_content"}{/block}
+</head>
+<body>
+{block content}
+    <h1>Page Header</h1>
+{/block}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{extends "base.html.smarty"}
+
+{block content}
+    This block contains the main content.
+
+    {foreach $data as $row}
+        {$row}
+    {/foreach}
+
+    {$data|json_encode}
+{/block}

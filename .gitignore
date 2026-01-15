@@ -1,0 +1,4 @@
+.history/
+cache/
+vendor/
+composer.lock

@@ -1,0 +1,11 @@
+{layout 'base.latte'}
+
+{block content}
+    This block contains the main content.
+
+    {foreach $data as $row}
+        {$row}
+    {/foreach}
+
+    {=json_encode($data)}
+{/block}

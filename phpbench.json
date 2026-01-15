@@ -1,0 +1,12 @@
+{
+    "runner.bootstrap": "vendor/autoload.php",
+    "runner.path": "benchmarks",
+    "runner.php_config": {
+        "error_reporting": "24575",
+        "display_errors": "0",
+        "opcache.enable": "1",
+        "opcache.enable_cli": "1",
+        "zend_extension": "opcache",
+        "xdebug.mode": "off"
+    }
+}
