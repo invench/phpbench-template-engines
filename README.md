@@ -21,7 +21,7 @@ The test templates are pretty simple:
 
 Results depend on your machine. Use the phpbench report output for comparisons (for example, `--report=aggregate`).
 
-### Comparison benchmark of Smarty 5.7.0, Twig 3.22.2, and Latte 3.1.1.
+### Comparison benchmark of Smarty 5.7.0, Twig 3.23.0, and Latte 3.1.1.
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
@@ -29,19 +29,21 @@ My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24
 
 | benchmark            | subject             | set | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|-----|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         |     | 120000 | 5   | 3.826mb   | 21.639μs | ±3.57% |
-| TemplateEnginesBench | benchSmartyReuse    |     | 120000 | 5   | 1.562mb   | 19.579μs | ±1.13% |
-| TemplateEnginesBench | benchTwig           |     | 120000 | 5   | 1.562mb   | 16.163μs | ±3.66% |
-| TemplateEnginesBench | benchTwigReuse      |     | 120000 | 5   | 1.562mb   | 14.442μs | ±1.27% |
-| TemplateEnginesBench | benchTwigYield      |     | 120000 | 5   | 1.562mb   | 14.767μs | ±1.60% |
-| TemplateEnginesBench | benchTwigYieldReuse |     | 120000 | 5   | 1.562mb   | 13.439μs | ±0.98% |
-| TemplateEnginesBench | benchLatte          |     | 120000 | 5   | 590.950mb | 37.296μs | ±1.21% |
+| TemplateEnginesBench | benchSmarty         |     | 120000 | 5   | 3.829mb   | 21.218μs | ±5.42% |
+| TemplateEnginesBench | benchSmartyReuse    |     | 120000 | 5   | 1.568mb   | 19.567μs | ±4.22% |
+| TemplateEnginesBench | benchTwig           |     | 120000 | 5   | 1.568mb   | 16.109μs | ±1.11% |
+| TemplateEnginesBench | benchTwigReuse      |     | 120000 | 5   | 1.568mb   | 14.671μs | ±2.66% |
+| TemplateEnginesBench | benchTwigYield      |     | 120000 | 5   | 1.568mb   | 14.934μs | ±2.40% |
+| TemplateEnginesBench | benchTwigYieldReuse |     | 120000 | 5   | 1.568mb   | 13.113μs | ±2.17% |
+| TemplateEnginesBench | benchLatte          |     | 120000 | 5   | 590.952mb | 37.843μs | ±3.23% |
 
-Latte 3.0 performance is the same as 3.1 (you can test it yourself with `composer require latte/latte:3.0.x`).
+Twig version-to-version benchmark is [here](Twig.md).
+
+Latte version-to-version benchmark is [here](Latte.md).
 
 ### Comparison benchmark of Smarty 4.5.6, Twig 3.8.0, and Latte 3.1.1.
 
-Use 'preregression' branch to test it:
+Use the 'preregression' branch to test it:
 
 ```bash
 git checkout preregression
