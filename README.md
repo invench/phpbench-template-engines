@@ -2,8 +2,6 @@
 
 This benchmark runs all engines under equal conditions with auto-escaping enabled. Disabling auto-escape hides the cost of a feature you should keep on to reduce XSS risk.
 
-Tested with PHP 8.4.16 (xdebug ✔, opcache ✔).
-
 ## Templates
 
 The test templates are pretty simple:
@@ -21,21 +19,25 @@ The test templates are pretty simple:
 
 Results depend on your machine. Use the phpbench report output for comparisons (for example, `--report=aggregate`).
 
-### Comparison benchmark of Smarty 5.7.0, Twig 3.23.0, and Latte 3.1.1.
+### Comparison benchmark of Smarty 5.8.0, Twig 3.23.0, and Latte 3.1.1.
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
 My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
 
+PHPBench (1.4.3) PHP version 8.4.18, xdebug ✔, opcache ✔
+
 | benchmark            | subject             | set | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|-----|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         |     | 120000 | 5   | 3.829mb   | 21.218μs | ±5.42% |
-| TemplateEnginesBench | benchSmartyReuse    |     | 120000 | 5   | 1.568mb   | 19.567μs | ±4.22% |
-| TemplateEnginesBench | benchTwig           |     | 120000 | 5   | 1.568mb   | 16.109μs | ±1.11% |
-| TemplateEnginesBench | benchTwigReuse      |     | 120000 | 5   | 1.568mb   | 14.671μs | ±2.66% |
-| TemplateEnginesBench | benchTwigYield      |     | 120000 | 5   | 1.568mb   | 14.934μs | ±2.40% |
-| TemplateEnginesBench | benchTwigYieldReuse |     | 120000 | 5   | 1.568mb   | 13.113μs | ±2.17% |
-| TemplateEnginesBench | benchLatte          |     | 120000 | 5   | 590.952mb | 37.843μs | ±3.23% |
+| TemplateEnginesBench | benchSmarty         |     | 120000 | 5   | 3.880mb   | 21.603μs | ±3.00% |
+| TemplateEnginesBench | benchSmartyReuse    |     | 120000 | 5   | 1.568mb   | 19.567μs | ±4.30% |
+| TemplateEnginesBench | benchTwig           |     | 120000 | 5   | 1.568mb   | 15.748μs | ±1.30% |
+| TemplateEnginesBench | benchTwigReuse      |     | 120000 | 5   | 1.568mb   | 14.392μs | ±1.51% |
+| TemplateEnginesBench | benchTwigYield      |     | 120000 | 5   | 1.568mb   | 14.416μs | ±1.62% |
+| TemplateEnginesBench | benchTwigYieldReuse |     | 120000 | 5   | 1.568mb   | 13.301μs | ±1.21% |
+| TemplateEnginesBench | benchLatte          |     | 120000 | 5   | 590.952mb | 37.137μs | ±1.28% |
+
+Smarty version-to-version benchmark is [here](Smarty.md).
 
 Twig version-to-version benchmark is [here](Twig.md).
 
