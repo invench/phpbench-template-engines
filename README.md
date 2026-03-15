@@ -19,23 +19,23 @@ The test templates are pretty simple:
 
 Results depend on your machine. Use the phpbench report output for comparisons (for example, `--report=aggregate`).
 
-### Comparison benchmark of Smarty 5.8.0, Twig 3.23.0, and Latte 3.1.1.
+### Comparison benchmark of Smarty 5.8.0, Twig 3.23.0, and Latte 3.1.2.
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
 My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
 
-PHPBench (1.4.3) PHP version 8.4.18, xdebug ✔, opcache ✔
+PHPBench (1.5.1) PHP version 8.4.18, xdebug ✔, opcache ✔
 
-| benchmark            | subject             | set | revs   | its | mem_peak  | mode     | rstdev |
-|----------------------|---------------------|-----|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         |     | 120000 | 5   | 3.880mb   | 21.603μs | ±3.00% |
-| TemplateEnginesBench | benchSmartyReuse    |     | 120000 | 5   | 1.568mb   | 19.567μs | ±4.30% |
-| TemplateEnginesBench | benchTwig           |     | 120000 | 5   | 1.568mb   | 15.748μs | ±1.30% |
-| TemplateEnginesBench | benchTwigReuse      |     | 120000 | 5   | 1.568mb   | 14.392μs | ±1.51% |
-| TemplateEnginesBench | benchTwigYield      |     | 120000 | 5   | 1.568mb   | 14.416μs | ±1.62% |
-| TemplateEnginesBench | benchTwigYieldReuse |     | 120000 | 5   | 1.568mb   | 13.301μs | ±1.21% |
-| TemplateEnginesBench | benchLatte          |     | 120000 | 5   | 590.952mb | 37.137μs | ±1.28% |
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.882mb   | 21.850μs | ±3.68% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.568mb   | 19.999μs | ±2.86% |
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.568mb   | 15.883μs | ±4.02% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.568mb   | 14.403μs | ±1.15% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.568mb   | 14.937μs | ±1.72% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.568mb   | 13.293μs | ±1.02% |
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 590.954mb | 37.176μs | ±4.36% |
 
 Smarty version-to-version benchmark is [here](Smarty.md).
 
@@ -55,13 +55,13 @@ vendor/bin/phpbench run
 
 My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
 
-| benchmark            | subject          | set | revs   | its | mem_peak  | mode     | rstdev |
-|----------------------|------------------|-----|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty      |     | 120000 | 5   | 2.871mb   | 16.332μs | ±3.60% |
-| TemplateEnginesBench | benchSmartyReuse |     | 120000 | 5   | 1.223mb   | 15.271μs | ±4.84% |
-| TemplateEnginesBench | benchTwig        |     | 120000 | 5   | 1.223mb   | 11.373μs | ±1.57% |
-| TemplateEnginesBench | benchTwigReuse   |     | 120000 | 5   | 1.223mb   | 10.037μs | ±2.73% |
-| TemplateEnginesBench | benchLatte       |     | 120000 | 5   | 590.815mb | 37.759μs | ±3.22% |
+| benchmark            | subject          | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchSmarty      | 120000 | 5   | 2.871mb   | 16.332μs | ±3.60% |
+| TemplateEnginesBench | benchSmartyReuse | 120000 | 5   | 1.223mb   | 15.271μs | ±4.84% |
+| TemplateEnginesBench | benchTwig        | 120000 | 5   | 1.223mb   | 11.373μs | ±1.57% |
+| TemplateEnginesBench | benchTwigReuse   | 120000 | 5   | 1.223mb   | 10.037μs | ±2.73% |
+| TemplateEnginesBench | benchLatte       | 120000 | 5   | 590.815mb | 37.759μs | ±3.22% |
 
 ## References
 
