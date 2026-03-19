@@ -19,7 +19,7 @@ The test templates are pretty simple:
 
 Results depend on your machine. Use the phpbench report output for comparisons (for example, `--report=aggregate`).
 
-### Comparison benchmark of Smarty 5.8.0, Twig 3.23.0, and Latte 3.1.2.
+### Comparison benchmark of Smarty 5.8.0, Twig 3.24.0, and Latte 3.1.2.
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
@@ -29,13 +29,13 @@ PHPBench (1.5.1) PHP version 8.4.18, xdebug ✔, opcache ✔
 
 | benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.882mb   | 21.850μs | ±3.68% |
-| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.568mb   | 19.999μs | ±2.86% |
-| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.568mb   | 15.883μs | ±4.02% |
-| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.568mb   | 14.403μs | ±1.15% |
-| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.568mb   | 14.937μs | ±1.72% |
-| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.568mb   | 13.293μs | ±1.02% |
-| TemplateEnginesBench | benchLatte          | 120000 | 5   | 590.954mb | 37.176μs | ±4.36% |
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.882mb   | 22.283μs | ±3.01% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.568mb   | 19.856μs | ±2.10% |
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.568mb   | 15.973μs | ±3.72% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.568mb   | 14.271μs | ±0.79% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.568mb   | 14.867μs | ±2.33% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.568mb   | 13.212μs | ±0.91% |
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 590.954mb | 38.391μs | ±1.47% |
 
 Smarty version-to-version benchmark is [here](Smarty.md).
 
