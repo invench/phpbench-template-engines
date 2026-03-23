@@ -5,7 +5,7 @@
     "require": {
         "smarty/smarty": "5.x",
         "twig/twig": "3.x",
-        "latte/latte": "3.1.2",
+        "latte/latte": "^3.1",
         "phpbench/phpbench": "^1.6"
     },
     "license": "MIT",
