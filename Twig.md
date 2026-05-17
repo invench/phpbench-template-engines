@@ -1,5 +1,27 @@
 # Twig version-to-version benchmark
 
+## 3.25.0 to 3.24.0
+
+PHPBench (1.6.1) PHP version 8.4.21, xdebug ✔, opcache ✔
+
+**3.25.0**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.568mb   | 16.216μs | ±0.98% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.568mb   | 14.587μs | ±1.52% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.568mb   | 15.304μs | ±2.41% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.568mb   | 13.580μs | ±1.97% |
+
+**3.24.0**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.568mb   | 16.542μs | ±0.86% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.568mb   | 14.715μs | ±1.24% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.568mb   | 15.721μs | ±2.57% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.568mb   | 13.614μs | ±2.30% |
+
 ## 3.24.0 to 3.23.0
 
 PHPBench (1.5.1) PHP version 8.4.18, xdebug ✔, opcache ✔
