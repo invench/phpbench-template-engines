@@ -19,23 +19,23 @@ The test templates are pretty simple:
 
 Results depend on your machine. Use the phpbench report output for comparisons (for example, `--report=aggregate`).
 
-### Comparison benchmark of Smarty 5.8.0, Twig 3.27.0, and Latte 3.1.4.
+### Comparison benchmark of Smarty 5.8.2, Twig 3.27.1, and Latte 3.1.4.
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
 My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
 
-PHPBench (1.6.1) PHP version 8.5.6, xdebug ✔, opcache ✔
+PHPBench (1.7.0) PHP version 8.5.7, xdebug ✔, opcache ✔
 
 | benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.958mb   | 23.155μs | ±3.79% |
-| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.653mb   | 20.345μs | ±4.23% |
-| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.653mb   | 16.744μs | ±2.84% |
-| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.653mb   | 15.862μs | ±1.42% |
-| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.653mb   | 15.817μs | ±3.34% |
-| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.653mb   | 13.815μs | ±1.20% |
-| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.029mb | 38.847μs | ±2.60% |
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.958mb   | 23.545μs | ±1.34% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.654mb   | 20.837μs | ±3.26% |
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.654mb   | 17.409μs | ±2.79% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.654mb   | 15.811μs | ±2.27% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.654mb   | 15.773μs | ±0.86% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.654mb   | 13.974μs | ±1.83% |
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.030mb | 37.432μs | ±1.53% |
 
 Smarty version-to-version benchmark is [here](Smarty.md).
 
