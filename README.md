@@ -25,17 +25,17 @@ Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usa
 
 My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
 
-PHPBench (1.7.0) PHP version 8.5.7, xdebug ✔, opcache ✔
+PHPBench (1.7.0) PHP version 8.5.8, xdebug ✔, opcache ✔
 
 | benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.958mb   | 23.545μs | ±1.34% |
-| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.654mb   | 20.837μs | ±3.26% |
-| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.654mb   | 17.409μs | ±2.79% |
-| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.654mb   | 15.811μs | ±2.27% |
-| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.654mb   | 15.773μs | ±0.86% |
-| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.654mb   | 13.974μs | ±1.83% |
-| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.030mb | 37.432μs | ±1.53% |
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.964mb   | 22.439μs | ±2.74% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.650mb   | 20.340μs | ±3.04% |
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.650mb   | 16.968μs | ±1.37% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.650mb   | 15.379μs | ±4.13% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.650mb   | 16.129μs | ±1.34% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.650mb   | 14.071μs | ±1.05% |
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.030mb | 38.416μs | ±2.31% |
 
 Smarty version-to-version benchmark is [here](Smarty.md).
 

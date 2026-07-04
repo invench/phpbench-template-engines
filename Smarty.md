@@ -1,5 +1,23 @@
 # Smarty version-to-version benchmark
 
+## 5.8.4 to 5.8.2
+
+PHPBench (1.7.0) PHP version 8.5.8, xdebug ✔, opcache ✔
+
+**5.8.4**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.964mb   | 22.439μs | ±2.74% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.650mb   | 20.340μs | ±3.04% |
+
+**5.8.2**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.958mb   | 22.903μs | ±4.60% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.654mb   | 21.069μs | ±1.76% |
+
 ## 5.8.2 to 5.8.1
 
 PHPBench (1.7.0) PHP version 8.5.7, xdebug ✔, opcache ✔
