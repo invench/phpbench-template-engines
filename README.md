@@ -23,19 +23,19 @@ Results depend on your machine. Use the phpbench report output for comparisons (
 
 Smarty 5.x and Twig 3.9 introduced performance regressions and higher memory usage.
 
-My results (Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz / 64 GB DDR4) on Ubuntu 24.04 are below:
+My results (Intel(R) Xeon(R) CPU E5-2699A v4 @ 2.40GHz / 96 GB DDR4 2400) on Ubuntu 24.04 are below:
 
-PHPBench (1.7.0) PHP version 8.5.8, xdebug ✔, opcache ✔
+PHPBench (1.7.0) PHP version 8.5.12, xdebug ✔, opcache ✔
 
 | benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
 |----------------------|---------------------|--------|-----|-----------|----------|--------|
-| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.964mb   | 22.439μs | ±2.74% |
-| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.650mb   | 20.340μs | ±3.04% |
-| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.650mb   | 16.968μs | ±1.37% |
-| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.650mb   | 15.379μs | ±4.13% |
-| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.650mb   | 16.129μs | ±1.34% |
-| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.650mb   | 14.071μs | ±1.05% |
-| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.030mb | 38.416μs | ±2.31% |
+| TemplateEnginesBench | benchSmarty         | 120000 | 5   | 3.963mb   | 21.981μs | ±5.03% |
+| TemplateEnginesBench | benchSmartyReuse    | 120000 | 5   | 1.670mb   | 19.673μs | ±1.09% |
+| TemplateEnginesBench | benchTwig           | 120000 | 5   | 1.670mb   | 15.387μs | ±2.15% |
+| TemplateEnginesBench | benchTwigReuse      | 120000 | 5   | 1.670mb   | 14.253μs | ±1.17% |
+| TemplateEnginesBench | benchTwigYield      | 120000 | 5   | 1.670mb   | 14.021μs | ±0.80% |
+| TemplateEnginesBench | benchTwigYieldReuse | 120000 | 5   | 1.670mb   | 12.734μs | ±1.94% |
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 673.594mb | 39.350μs | ±2.09% |
 
 Smarty version-to-version benchmark is [here](Smarty.md).
 

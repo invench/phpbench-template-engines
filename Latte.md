@@ -2,6 +2,22 @@
 
 You can change the current latte version via composer, for example: `composer require latte/latte:3.0.x`.
 
+## 3.1.9 to 3.1.4
+
+PHPBench (1.7.0) PHP version 8.5.12, xdebug ✔, opcache ✔
+
+**3.1.9**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 673.594mb | 39.350μs | ±2.09% |
+
+**3.1.4**
+
+| benchmark            | subject             | revs   | its | mem_peak  | mode     | rstdev |
+|----------------------|---------------------|--------|-----|-----------|----------|--------|
+| TemplateEnginesBench | benchLatte          | 120000 | 5   | 591.030mb | 38.634μs | ±1.49% |
+
 ## 3.1.4 to 3.1.3
 
 PHPBench (1.6.1) PHP version 8.4.21, xdebug ✔, opcache ✔
